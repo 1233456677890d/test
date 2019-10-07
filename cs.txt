@@ -1,0 +1,16 @@
+
+<?php
+    $mysql_username = 'web500';
+    $mysql_password = 'yileiorz233';
+    $mysql_host = '10.214.160.13';
+    $conn = new mysqli($mysql_host, $mysql_username, $mysql_password, "web500",43306);
+      $conn->query("SET NAMES utf8");
+    $sql = "select content from article";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()){
+        print $row['content'];
+        print "<br />";
+    }
+    $result->free();
+    $conn->close();
+?>
